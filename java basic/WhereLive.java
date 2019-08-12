@@ -5,6 +5,6 @@ class WhereLive {
         Scanner scanner = new Scanner (System.in);
         String resion =  "" ;
         resion = scanner.next() ;
-        System.out.println ("내가 사는 곳은 " + resion + "이야");
+        System.out.println (String.format("내가 사는 곳은 %s 이야", resion));
     }   
 }

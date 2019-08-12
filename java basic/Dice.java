@@ -1,23 +1,33 @@
 import java.util.Scanner ;
+import java.util.Random ;
 class Dice {
     /**
-     * 주사위를 던저서 홀수인지 짝수인지 맞추는 게임
-     * 일단, 컴퓨터가 던져서 얻은 값은 3입니다.
-     * 사용자는 홀 또는 짝을 선택합니다.
-     * 결과를 나타냅니다.
+     * 컴퓨터가 주사위 숫자중 하나를 램덤으로 선택하면 사용자가 홀, 짝을 맞추는 게임
      */
-    public static void main (String[] args) {
+        public static void main (String[] args) {
         System.out.println("홀수인지 짝수인지 맞춰보세요.");
         System.out.println("컴퓨터가 숫자를 선택했습니다. 홀수면 홀을 짝수면 짝을 선택해 주세요.");
         Scanner scanner = new Scanner (System.in) ;
+        Random random = new Random() ;
+        int dice = 0 ;
+        dice = random.nextInt(6)+1 ;
         String choice = "" ;
-        choice = scanner.next();
-        if(choice.equals("홀")){
-            System.out.println("정답입니다.");
-        }else if(choice.equals("짝")){
-            System.out.println("틀렸습니다.");
-        }else {
-            System.out.println("홀 또는 짝을 선택하세요");
-        }
+        choice = scanner.next() ;
+        System.out.println(String.format("램덤으로 나온 수 %d" , dice));
+        String answer = "" ;
+        if(dice==1){
+            answer = "홀" ;
+        }else if(dice==2){
+            answer = "짝" ; 
+        }else if(dice==3){
+            answer = "홀" ; 
+        }else if(dice==4){
+            answer = "짝" ; 
+        }else if(dice==5){
+            answer = "홀" ; 
+        }else if(dice==6){
+            answer = "짝" ; 
+        }else {answer = "짝" ; }
+        if(choice.equals(answer)){System.out.println("정답");}else{System.out.println("오답");}
     }
 }
